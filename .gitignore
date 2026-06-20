@@ -16,6 +16,13 @@ data/raw_pdfs/
 *.npy
 *.index
 
+# But keep the committed processed data
+!data/processed/embeddings.npy
+!data/processed/faiss.index.npy
+!data/processed/metadata.pkl
+!data/processed/embedder_meta.pkl
+!data/processed/lsa_state.pkl
+
 # VS Code
 .vscode/
 
