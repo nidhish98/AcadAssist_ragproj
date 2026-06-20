@@ -8,9 +8,6 @@ __pycache__/
 # Environment
 .env
 
-# Processed RAG artifacts
-data/processed/
-
 # Raw PDFs
 data/raw_pdfs/
 

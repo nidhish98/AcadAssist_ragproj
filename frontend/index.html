@@ -1,38 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAKA — RAG Knowledge Assistant for SPIT academic documents">
   <title>RAKA — SPIT Academic Assistant</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
     <header>
-      <h1>RAKA</h1>
-      <span class="subtitle">SPIT Academic Assistant</span>
-      <div id="status-badge">loading…</div>
+      <div class="header-left">
+        <div class="logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="8" fill="var(--primary)"/>
+            <path d="M8 10h12M8 14h8M8 18h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="brand">RAKA</span>
+        </div>
+        <span class="subtitle">SPIT Academic Assistant</span>
+      </div>
+      <div class="header-right">
+        <div id="status-badge" class="badge loading">Connecting…</div>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+          <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+      </div>
     </header>
 
     <main>
       <div id="chat" role="log" aria-label="Chat history">
         <div class="message bot welcome">
-          <div class="avatar">R</div>
+          <div class="avatar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="2" y="2" width="20" height="20" rx="4"/><path d="M9 12h6M12 9v6"/>
+            </svg>
+          </div>
           <div class="bubble">
-            <p>Ask me anything about SPIT documents — examination rules, syllabus, placement policy, and more.</p>
+            <p>Hello! I'm <strong>RAKA</strong>, your SPIT academic assistant. I can answer questions about:</p>
+            <div class="suggestions">
+              <button class="suggestion" data-q="What is the minimum attendance requirement?">📋 Attendance policy</button>
+              <button class="suggestion" data-q="What is the CSE syllabus for 2023-27?">📚 CSE syllabus</button>
+              <button class="suggestion" data-q="What are the placement eligibility criteria?">💼 Placement policy</button>
+              <button class="suggestion" data-q="What is the exam grading scheme?">📝 Exam rules</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <form id="form" autocomplete="off">
-        <input
-          type="text"
-          id="input"
-          placeholder="e.g. What is the attendance requirement?"
-          required
-        >
-        <button type="submit" id="send-btn" aria-label="Send">Send</button>
-      </form>
+      <div class="input-area">
+        <form id="form" autocomplete="off">
+          <textarea
+            id="input"
+            rows="1"
+            placeholder="Ask a question about SPIT documents…"
+            required
+          ></textarea>
+          <button type="submit" id="send-btn" aria-label="Send" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </form>
+        <p class="hint">Enter to send · Shift+Enter for new line</p>
+      </div>
     </main>
   </div>
   <script src="script.js"></script>

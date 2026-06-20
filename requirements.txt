@@ -1,3 +1,5 @@
+fastapi
+uvicorn
 numpy
 scikit-learn
 sentence-transformers
