@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Environment
+.env
+
+# Processed RAG artifacts
+data/processed/
+
+# Raw PDFs
+data/raw_pdfs/
+
+# Embeddings / vector DB
+*.pkl
+*.npy
+*.index
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store

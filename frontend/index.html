@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAKA — SPIT Academic Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>RAKA</h1>
+      <span class="subtitle">SPIT Academic Assistant</span>
+      <div id="status-badge">loading…</div>
+    </header>
+
+    <main>
+      <div id="chat" role="log" aria-label="Chat history">
+        <div class="message bot welcome">
+          <div class="avatar">R</div>
+          <div class="bubble">
+            <p>Ask me anything about SPIT documents — examination rules, syllabus, placement policy, and more.</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="form" autocomplete="off">
+        <input
+          type="text"
+          id="input"
+          placeholder="e.g. What is the attendance requirement?"
+          required
+        >
+        <button type="submit" id="send-btn" aria-label="Send">Send</button>
+      </form>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
