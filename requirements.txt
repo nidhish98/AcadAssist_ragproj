@@ -5,3 +5,4 @@ scikit-learn
 pdfplumber
 pypdf
 python-dotenv
+python-multipart
